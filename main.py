@@ -29,12 +29,12 @@ def main():
     screen = init_game()
     clock = pygame.time.Clock()
 
-
+    backround_img = pygame.image.load()
     
     running = True
     while running:
         running = handle_events()
-        screen.fill(config.GRAY) # Use color from config
+        screen.fill(config.WHITE) # Use color from config
         
         # Add code to draw stuff (for example) below this comment
 
