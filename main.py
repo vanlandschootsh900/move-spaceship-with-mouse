@@ -28,24 +28,26 @@ def main():
     
     screen = init_game()
     clock = pygame.time.Clock()
-
-
     
+    backround_img = pygame.image.load('saturn_family1.jpg')
+    
+
+    player_img = pygame.image.load('player.png').convert()
+    player_img.set_colorkey(config.BLACK)
+
     running = True
     while running:
         running = handle_events()
         #screen.fill(config.WHITE) # Use color from config
-        backround_img = pygame.image.load('saturn_family1.jpg')
-        screen.blit(backround_img,[0,0])
-        # Add code to draw stuff (for example) below this comment
-        player_pos= pygame.mouse.get_pos()
-        x=player_pos[0]
-        y=player_pos[1]
-        
-        player_img = pygame.image.load('player.png').convert()
-        screen.blit(player_img,[x,y])
-        player_img.set_colorkey(config.BLACK)
 
+        # Add code to draw stuff (for example) below this comment
+        screen.blit(backround_img,[0,0])
+        player_pos= pygame.mouse.get_pos()
+        x=player_pos[0] - (player_img.get_width()/2)
+        y=player_pos[1] - (player_img.get_height()/2)
+        
+
+        screen.blit(player_img,[x,y])
 
 
 
